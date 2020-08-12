@@ -30,6 +30,8 @@ public class CitiesFragment extends Fragment {
     private CheckBox pressureBox;
 
     private boolean isWeatherExist;
+    private String windData;
+    private String pressureData;
     private int currentPosition = 0;
 
     @Override
@@ -52,8 +54,15 @@ public class CitiesFragment extends Fragment {
         isWeatherExist = getResources().getConfiguration().orientation
                 == Configuration.ORIENTATION_LANDSCAPE;
 
+        if (windBox.isChecked()) {
+            windData = "Wind speed: 3 m/s";
+        }
+
+        if (pressureBox.isChecked()){
+            pressureData = "Pressure: 1019 hPa";
+        }
+
         if (savedInstanceState != null) {
-            // Восстановление текущей позиции.
             currentPosition = savedInstanceState.getInt("CurrentCity", 0);
         }
 
@@ -96,8 +105,8 @@ public class CitiesFragment extends Fragment {
     private void showWeather() {
         if (isWeatherExist) {
             listView.setItemChecked(currentPosition, true);
-            windBox.isChecked();
-            pressureBox.isChecked();
+//            windBox.isChecked();
+//            pressureBox.isChecked();
 
             WeatherFragment detail = (WeatherFragment)
                     Objects.requireNonNull(getFragmentManager()).findFragmentById(R.id.cityImg);
@@ -122,9 +131,11 @@ public class CitiesFragment extends Fragment {
 
     private WeatherContainer getWeatherContainer() {
         String[] cities = getResources().getStringArray(R.array.cities);
+        String[] temperature = getResources().getStringArray(R.array.temperature);
         WeatherContainer container = new WeatherContainer();
         container.position = currentPosition;
         container.cityName = cities[currentPosition];
+        container.temperature = temperature[currentPosition];
         return container;
     }
 }
