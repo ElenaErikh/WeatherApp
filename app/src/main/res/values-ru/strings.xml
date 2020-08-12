@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Weather App</string>
+    <string name="temperature_text">+25°C</string>
+    <string name="ok">OK</string>
+    <string name="wind_speed">показывать скорость ветра</string>
+    <string name="atmospheric_pressure">показывать атмосферное давление</string>
+    <string name="enter_date">введите дату</string>
+    <string name="enter_time">введите время</string>
+    <string name="choose_your_city">Выберите город:</string>
+    <string name="changeTemperatureBtn">Менять°C</string>
+</resources>

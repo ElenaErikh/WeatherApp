@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>Moscow</item>
+        <item>Saint Petersburg</item>
+        <item>Krasnodar</item>
+        <item>London</item>
+        <item>New Delhi</item>
+        <item>Helsinki</item>
+        <item>Kathmandu</item>
+    </string-array>
+
+    <integer-array name="cities_imgs">
+        <item>@drawable/moscow</item><!-- фото Москвы -->
+        <item>@drawable/spb</item><!-- фото Санкт-Петербурга -->
+        <item>@drawable/krasnodar</item><!-- фото Краснодара -->
+        <item>@drawable/london</item><!-- фото Лондона -->
+        <item>@drawable/delhi</item><!-- фото Дели -->
+        <item>@drawable/helsinki</item><!-- фото Хельсинки-->
+        <item>@drawable/kathmandu</item><!-- фото Катманду -->
+    </integer-array>
+
+</resources>
