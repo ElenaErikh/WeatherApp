@@ -100,6 +100,7 @@ public class WeatherFragment extends Fragment {
 
         TextView pressureTextView = new TextView(getContext());
         String pressure = getPressure();
+        //System.out.println("MY PRESSURE" + pressure);
         pressureTextView.setText(pressure);
 
         ImageView cityImage = new ImageView(getActivity());

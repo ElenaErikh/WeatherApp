@@ -105,8 +105,6 @@ public class CitiesFragment extends Fragment {
     private void showWeather() {
         if (isWeatherExist) {
             listView.setItemChecked(currentPosition, true);
-//            windBox.isChecked();
-//            pressureBox.isChecked();
 
             WeatherFragment detail = (WeatherFragment)
                     Objects.requireNonNull(getFragmentManager()).findFragmentById(R.id.cityImg);
@@ -136,6 +134,8 @@ public class CitiesFragment extends Fragment {
         container.position = currentPosition;
         container.cityName = cities[currentPosition];
         container.temperature = temperature[currentPosition];
+        container.wind = windData;
+        container.pressure = pressureData;
         return container;
     }
 }
