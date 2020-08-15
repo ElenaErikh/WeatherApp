@@ -20,4 +20,16 @@
         <item>@drawable/kathmandu</item><!-- фото Катманду -->
     </integer-array>
 
+    <string-array name="temperature">
+        <item>+15</item><!-- температура Москвы -->
+        <item>+10</item><!-- температура Санкт-Петербурга -->
+        <item>+25</item><!-- температура Краснодара -->
+        <item>+18</item><!-- температура Лондона -->
+        <item>+42</item><!-- температура Дели -->
+        <item>+20</item><!-- температура Хельсинки-->
+        <item>+35</item><!-- температура Катманду -->
+    </string-array>
+
+
+
 </resources>

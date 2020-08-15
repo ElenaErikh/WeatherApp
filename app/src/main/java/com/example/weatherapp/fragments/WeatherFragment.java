@@ -49,6 +49,36 @@ public class WeatherFragment extends Fragment {
         }
     }
 
+    String getTemperature(){
+        WeatherContainer weatherContainer = (WeatherContainer) (Objects.requireNonNull(getArguments())
+                .getSerializable("index"));
+        try {
+            return weatherContainer.temperature;
+        }catch (Exception e){
+            return "";
+        }
+    }
+
+    String getWind(){
+        WeatherContainer weatherContainer = (WeatherContainer) (Objects.requireNonNull(getArguments())
+                .getSerializable("index"));
+        try {
+            return weatherContainer.wind;
+        }catch (Exception e){
+            return "";
+        }
+    }
+
+    String getPressure(){
+        WeatherContainer weatherContainer = (WeatherContainer) (Objects.requireNonNull(getArguments())
+                .getSerializable("index"));
+        try {
+            return weatherContainer.pressure;
+        }catch (Exception e){
+            return "";
+        }
+    }
+
     @Override
     @SuppressLint("Recycle")
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -61,19 +91,19 @@ public class WeatherFragment extends Fragment {
         cityNameTextView.setText(cityName);
 
         TextView temperatureTextView = new TextView(getContext());
-        String t = "+25";
-        temperatureTextView.setText(t);
+        String temperature = getTemperature();
+        temperatureTextView.setText(temperature);
 
         TextView windTextView = new TextView(getContext());
-        String windStr = "Wind: 3 m/s";
-        windTextView.setText(windStr);
+        String wind = getWind();
+        windTextView.setText(wind);
 
         TextView pressureTextView = new TextView(getContext());
-        String p = "Pressure: 1019 hPa";
-        pressureTextView.setText(p);
+        String pressure = getPressure();
+        //System.out.println("MY PRESSURE" + pressure);
+        pressureTextView.setText(pressure);
 
         ImageView cityImage = new ImageView(getActivity());
-
         TypedArray images = getResources().obtainTypedArray(R.array.cities_imgs);
         cityImage.setImageResource(images.getResourceId(getIndex(), -1));
 
